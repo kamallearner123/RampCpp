@@ -21,6 +21,8 @@ public:
         cout << a << " " << b << endl;
         return;
     }
+    static Factory PointFactory;
+    private:
     class Factory
     {
     public:
@@ -42,11 +44,13 @@ public:
     }
 };
 
+point point::PointFactory;
+
 int main()
 {
-    point a = point::Factory::get_typea(1, 2);
+    point a = point::PointFactory::get_typea(1, 2);
     a.point_details();
-    point b = point::Factory::get_typeb(1, 2);
+    point b = point::PointFactory::get_typeb(1, 2);
     b.point_details();
     cout << a << endl;
 }
